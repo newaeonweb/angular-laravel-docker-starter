@@ -200,7 +200,7 @@ class BikeController extends Controller
             return response()->json(['error' => 'You can only edit your own bike.'], 403);
         }
 
-        $bike->update($request->only(['make', 'model', 'year', 'mods', 'picture']));
+        $bike->update($request->only(['make', 'model', 'year', 'mods', 'builder_id', 'picture']));
 
         return new BikesResource($bike);
     }
